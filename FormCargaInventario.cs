@@ -33,6 +33,11 @@ namespace WindowsFormsApp2
             get { return this.txtCantidad.Text; }
             set { this.txtCantidad.Text = value; }
         }
+        public string _precio
+        {
+            get { return this.txtPrecio.Text; }
+            set { this.txtPrecio.Text = value; }
+        }
         public string _descripcion
         {
             get { return this.txtDescripcion.Text; }
@@ -79,11 +84,27 @@ namespace WindowsFormsApp2
                 txtCantidad.Focus();
                 return;
             }
+            else if (txtPrecio.Text == "")
+            {
+                MessageBox.Show("Ingrese un Precio");
+                txtPrecio.Focus();
+                return;
+            }
             this.Close();
 
 
 
 
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
