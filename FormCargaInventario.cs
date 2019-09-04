@@ -27,23 +27,19 @@ namespace WindowsFormsApp2
             get { return this.txtNombre.Text; }
             set { this.txtNombre.Text = value; }
         }
-
-        public string _cantidad
+        public string _codTipo
         {
-            get { return this.txtCantidad.Text; }
-            set { this.txtCantidad.Text = value; }
-        }
-        public string _precio
-        {
-            get { return this.txtPrecio.Text; }
-            set { this.txtPrecio.Text = value; }
-        }
-        public string _descripcion
-        {
-            get { return this.txtDescripcion.Text; }
-            set { this.txtDescripcion.Text = value; }
+            get { return this.cmbTipo.SelectedIndex.ToString(); }
+            set { this.cmbTipo.SelectedIndex = value; }
         }
 
+        public string _Tipo
+        {
+            get { return this.cmbTipo.Text; }
+            set { this.cmbTipo.Text = value; }
+        }
+        
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -61,7 +57,10 @@ namespace WindowsFormsApp2
 
         private void FormCargaInventario_Load(object sender, EventArgs e)
         {
-
+            ArrayList listaTipo = new ArrayList();
+            listaTipo.Add("Verdura");
+            listaTipo.Add("Fruta");
+            cmbTipo.DataSource = listaTipo;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -78,18 +77,7 @@ namespace WindowsFormsApp2
                 txtNombre.Focus();
                 return;
             }
-            else if (txtCantidad.Text == "")
-            {
-                MessageBox.Show("Ingrese la Cantidad");
-                txtCantidad.Focus();
-                return;
-            }
-            else if (txtPrecio.Text == "")
-            {
-                MessageBox.Show("Ingrese un Precio");
-                txtPrecio.Focus();
-                return;
-            }
+            
             this.Close();
 
 
@@ -105,6 +93,11 @@ namespace WindowsFormsApp2
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

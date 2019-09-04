@@ -35,9 +35,9 @@ namespace WindowsFormsApp2
             ArrayList listaInventario = new ArrayList();
             grdInventario.Columns.Add("clmarticulo", "Artículo");
             grdInventario.Columns.Add("clmnombre", "Nombre");
-            grdInventario.Columns.Add("clmcantidad", "Cantidad");
-            grdInventario.Columns.Add("clmprecio", "Precio (Kg)");
-            grdInventario.Columns.Add("clmdescripcion", "Descripción");
+            grdInventario.Columns.Add("clmtipo", "Tipo");
+            grdInventario.Columns.Add("clmclavetipo", "Codigo tipo");
+            grdInventario.Columns[3].Visible = false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                grdInventario.Rows.Add(frm._articulo, frm._nombre.ToUpper(), frm._cantidad, frm._precio, frm._descripcion);
+                grdInventario.Rows.Add(frm._articulo, frm._nombre.ToUpper(), frm._Tipo);
 
             }
 
