@@ -59,8 +59,18 @@ namespace WindowsFormsApp2
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            grdInventario.Rows.Clear();
-                         
+            grdInventario.Rows.RemoveAt(grdInventario.CurrentRow.Index);
+            
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FormCargaInventario frm = new FormCargaInventario();
+            //var array = grdInventario.CurrentRow.Index()
+            frm.ShowDialog();
+            grdInventario.Rows.Insert(grdInventario.CurrentRow.Index);
+        
         }
     }
 }

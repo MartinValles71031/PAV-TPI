@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
         public string _codTipo
         {
             get { return this.cmbTipo.SelectedIndex.ToString(); }
-            set { this.cmbTipo.SelectedIndex = value; }
+            //set { this.cmbTipo.SelectedIndex = value; }
         }
 
         public string _Tipo
