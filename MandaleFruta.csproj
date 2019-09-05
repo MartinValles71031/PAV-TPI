@@ -70,8 +70,12 @@
     <Compile Include="form_menu.Designer.cs">
       <DependentUpon>form_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="helper\acceso_BD.cs" />
+    <Compile Include="Modelos\frutaVerdura.cs" />
+    <Compile Include="Modelos\tipo_FrutaVerdura.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repositorios\FrutasVerdurasRepositorio.cs" />
     <EmbeddedResource Include="FormCargaInventario.resx">
       <DependentUpon>FormCargaInventario.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modulos\FrutasVerduras\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

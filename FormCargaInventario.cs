@@ -8,37 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MandaleFruta.repositorios;
+using MandaleFruta.Modelos;
 
-namespace WindowsFormsApp2
+namespace MandaleFruta
 {
     public partial class FormCargaInventario : Form
     {
+        FrutasVerdurasRepositorio _frutasVerdurasRepositorio;
+
         public FormCargaInventario()
         {
             InitializeComponent();
+            _frutasVerdurasRepositorio = new FrutasVerdurasRepositorio();
         }
-        public string _articulo
-        {
-            get { return this.txtArticulo.Text; }
-            set { this.txtArticulo.Text = value; }
-        }
-        public string _nombre
-        {
-            get { return this.txtNombre.Text; }
-            set { this.txtNombre.Text = value; }
-        }
-        public string _codTipo
-        {
-            get { return this.cmbTipo.SelectedIndex.ToString(); }
-            //set { this.cmbTipo.SelectedIndex = value; }
-        }
-
-        public string _Tipo
-        {
-            get { return this.cmbTipo.Text; }
-            set { this.cmbTipo.Text = value; }
-        }
-        
+               
         
         private void label1_Click(object sender, EventArgs e)
         {
@@ -65,6 +49,11 @@ namespace WindowsFormsApp2
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            var producto = new FrutaVerdura();
+            producto.Nombre = txtNombre.Text;
+            producto.id_Tipo = Convert.ToInt32(txtArticulo.Text);
+            producto.id_Tipo = cmbTipo.SelectedIndex;
+                                                                           
             if (txtArticulo.Text == "")
             {
                 MessageBox.Show("Ingrese un Artículo");
@@ -76,6 +65,11 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Ingrese El Nombre del Artículo");
                 txtNombre.Focus();
                 return;
+            }
+            if (_frutasVerdurasRepositorio.Guardar(producto))
+            {
+                MessageBox.Show("se registro con exito");
+                this.Dispose();
             }
             
             this.Close();

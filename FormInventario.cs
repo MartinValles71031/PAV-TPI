@@ -8,15 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MandaleFruta.repositorios;
 
-namespace WindowsFormsApp2
+namespace MandaleFruta
 {
     public partial class FormInventario : Form
     {
+        FrutasVerdurasRepositorio _frutasVerdurasRepositorio;
 
         public FormInventario()
         {
             InitializeComponent();
+            _frutasVerdurasRepositorio = new FrutasVerdurasRepositorio();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -32,28 +35,39 @@ namespace WindowsFormsApp2
         private void FormInventario_Load(object sender, EventArgs e)
         {
 
-            ArrayList listaInventario = new ArrayList();
-            grdInventario.Columns.Add("clmarticulo", "Artículo");
-            grdInventario.Columns.Add("clmnombre", "Nombre");
-            grdInventario.Columns.Add("clmtipo", "Tipo");
-            grdInventario.Columns.Add("clmclavetipo", "Codigo tipo");
-            grdInventario.Columns[3].Visible = false;
+            ActualizarInventario();
         }
+        private void ActualizarInventario()
+        {
+            grdInventario.Rows.Clear();
+            var inventario = _frutasVerdurasRepositorio.obtenerFrutasVerdurasDT().Rows;
+            ActualizarGrilla(inventario);
+
+        }
+        private void ActualizarGrilla(DataRowCollection registros)
+        {
+            foreach (DataRow registro in registros)
+            {
+                if (registro.HasErrors)
+                    continue;
+                var fila = new String[]
+                {
+                    registro.ItemArray[0].ToString(),
+                    registro.ItemArray[1].ToString(),
+                    registro.ItemArray[2].ToString()
+
+                };
+                grdInventario.Rows.Add(fila);
+            }
+        }
+
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
 
             FormCargaInventario frm = new FormCargaInventario();
             frm.ShowDialog();
-            if (frm._articulo == "")
-            {
-                return;
-            }
-            else
-            {
-                grdInventario.Rows.Add(frm._articulo, frm._nombre.ToUpper(), frm._Tipo);
-
-            }
+            
 
         }
 
