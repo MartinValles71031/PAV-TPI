@@ -51,9 +51,10 @@ namespace MandaleFruta
         {
             var producto = new FrutaVerdura();
             producto.Nombre = txtNombre.Text;
-            producto.id_Tipo = Convert.ToInt32(txtArticulo.Text);
-            producto.id_Tipo = cmbTipo.SelectedIndex;
-                                                                           
+            producto.id_FrutaVerdura = Convert.ToInt32(txtArticulo.Text);
+            producto.id_Tipo = 0;
+            ///producto.id_Tipo = cmbTipo.SelectedIndex;
+
             if (txtArticulo.Text == "")
             {
                 MessageBox.Show("Ingrese un Artículo");

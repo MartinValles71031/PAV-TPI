@@ -76,6 +76,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repositorios\FrutasVerdurasRepositorio.cs" />
+    <Compile Include="repositorios\tipo_FrutasVerdurasRepositorio.cs" />
     <EmbeddedResource Include="FormCargaInventario.resx">
       <DependentUpon>FormCargaInventario.cs</DependentUpon>
     </EmbeddedResource>
