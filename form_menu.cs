@@ -61,5 +61,12 @@ namespace MandaleFruta
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Boton creado momentaneamente para demostracion de abm usuario
+            Form formulario = new form_menuAdm();
+            formulario.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnInventario
@@ -96,6 +97,16 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(60, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 29);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Usuario\r\n";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -106,6 +117,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(372, 341);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnPedidos);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.Button btnPedidos;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button button1;
     }
 }

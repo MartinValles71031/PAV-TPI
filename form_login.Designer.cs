@@ -62,6 +62,7 @@
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(170, 20);
             this.TxtUsuario.TabIndex = 2;
+            this.TxtUsuario.TextChanged += new System.EventHandler(this.TxtUsuario_TextChanged);
             // 
             // TxtPass
             // 
