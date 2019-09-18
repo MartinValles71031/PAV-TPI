@@ -68,6 +68,7 @@ namespace MandaleFruta
             FormCargaInventario frm = new FormCargaInventario();
             frm.ShowDialog();
             
+            
 
         }
 
@@ -82,9 +83,15 @@ namespace MandaleFruta
         {
             FormCargaInventario frm = new FormCargaInventario();
             //var array = grdInventario.CurrentRow.Index()
+            this.Hide();
             frm.ShowDialog();
             grdInventario.Rows.Insert(grdInventario.CurrentRow.Index);
-        
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

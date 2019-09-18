@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formMenuInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMenuInventario.Designer.cs">
+      <DependentUpon>formMenuInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="formNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formNuevoUsuario.Designer.cs">
       <DependentUpon>formNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formTipoArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formTipoArt.Designer.cs">
+      <DependentUpon>formTipoArt.cs</DependentUpon>
     </Compile>
     <Compile Include="formUsuario.cs">
       <SubType>Form</SubType>
@@ -58,17 +70,17 @@
     <Compile Include="formUsuario.Designer.cs">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCargaInventario.cs">
+    <Compile Include="formCargaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCargaInventario.Designer.cs">
-      <DependentUpon>FormCargaInventario.cs</DependentUpon>
+    <Compile Include="formCargaInventario.Designer.cs">
+      <DependentUpon>formCargaInventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInventario.cs">
+    <Compile Include="formInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInventario.Designer.cs">
-      <DependentUpon>FormInventario.cs</DependentUpon>
+    <Compile Include="formInventario.Designer.cs">
+      <DependentUpon>formInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="form_login.cs">
       <SubType>Form</SubType>
@@ -89,17 +101,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repositorios\FrutasVerdurasRepositorio.cs" />
     <Compile Include="repositorios\tipo_FrutasVerdurasRepositorio.cs" />
+    <EmbeddedResource Include="formMenuInventario.resx">
+      <DependentUpon>formMenuInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formNuevoUsuario.resx">
       <DependentUpon>formNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formTipoArt.resx">
+      <DependentUpon>formTipoArt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCargaInventario.resx">
-      <DependentUpon>FormCargaInventario.cs</DependentUpon>
+    <EmbeddedResource Include="formCargaInventario.resx">
+      <DependentUpon>formCargaInventario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInventario.resx">
-      <DependentUpon>FormInventario.cs</DependentUpon>
+    <EmbeddedResource Include="formInventario.resx">
+      <DependentUpon>formInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_login.resx">
       <DependentUpon>form_login.cs</DependentUpon>

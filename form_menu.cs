@@ -48,7 +48,7 @@ namespace MandaleFruta
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            FormInventario frm = new FormInventario();
+            formMenuInventario frm = new formMenuInventario();
             frm.ShowDialog();
         }
 
